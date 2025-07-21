@@ -13,9 +13,13 @@ const Hero = () => {
               ByteBlaze
             </span>
           </h1>
-          <p className="py-6">
-            ByteBlaze is the bridge between the complex world of technology and
-            the curious minds eager to understand it
+          <p className="py-6 text-justify">
+            ByteBlaze is your guiding light through the vast, intricate world of
+            technology. We simplify the cutting-edge—transforming daunting
+            concepts into engaging, digestible knowledge. Whether you're a
+            seasoned developer, an aspiring tech enthusiast, or simply curious
+            about the digital age, ByteBlaze bridges the gap, making innovation
+            accessible to all.
           </p>
           <div className="flex gap-2 justify-center">
             <Link

@@ -1,43 +1,63 @@
-// BlogCard component--------------------------------
 import { Link } from "react-router-dom";
 import placeholderImg from "../assets/404.jpg";
 import PropTypes from "prop-types";
 import { MdDeleteForever } from "react-icons/md";
+
 const BlogCard = ({ blog, deletable, handleDelete }) => {
   const { cover_image, title, description, published_at } = blog;
+  
   return (
-    <div className="flex relative">
+    <div className="relative group h-[500px]"> {/* Fixed height container */}
       <Link
         to={`/blog/${blog.id}`}
-        className="max-w-sm mx-auto transition border-2 p-2 hover:scale-105 border-opacity-30 border-primary hover:border-secondary  group hover:no-underline focus:no-underline "
+        className="block h-full max-w-sm bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100 hover:border-secondary/20 flex flex-col"
       >
-        <img
-          role="presentation"
-          className="object-cover w-full rounded h-44 "
-          src={cover_image || placeholderImg}
-        />
-        <div className="py-6 space-y-2">
-          <h3 className="text-2xl font-semibold group-hover:underline group-focus:underline">
-            {/* {title.substring(0, 25)}.. */}
-            {title}
-          </h3>
-          <span className="text-xs ">
-            {new Date(published_at).toLocaleDateString()}
-          </span>
-          <p>{description}</p>
+        {/* Image section with fixed height */}
+        <div className="relative h-48 overflow-hidden flex-shrink-0">
+          <img
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            src={cover_image || placeholderImg}
+            alt={title}
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
         </div>
-        <div></div>
+
+        {/* Content section that grows to fill remaining space */}
+        <div className="p-6 flex flex-col flex-grow">
+          <div className="flex justify-between items-start">
+            <h3 className="text-xl font-bold text-gray-800 line-clamp-2 mb-1">
+              {title}
+            </h3>
+          </div>
+          <span className="text-xs text-gray-500">
+            {new Date(published_at).toLocaleDateString('en-US', {
+              year: 'numeric',
+              month: 'short',
+              day: 'numeric'
+            })}
+          </span>
+          <p className="mt-3 text-gray-600 line-clamp-3 flex-grow">
+            {description}
+          </p>
+          <div className="mt-4 pt-3 border-t border-gray-100">
+            <span className="inline-block px-3 py-1 text-xs font-medium rounded-full bg-primary/10 text-primary">
+              Read More
+            </span>
+          </div>
+        </div>
       </Link>
+
       {deletable && (
-        <div
+        <button
           onClick={() => handleDelete(blog.id)}
-          className="bg-primary p-3 ml-5 rounded-full hover:bg-secondary group  cursor-pointer hover:scale-105 absolute -top-5 -right-5"
+          className="absolute top-4 right-4 bg-white p-2 rounded-full shadow-lg hover:bg-red-500 transition-colors duration-200 group/delete"
+          aria-label="Delete post"
         >
           <MdDeleteForever
             size={20}
-            className="text-secondary group-hover:text-primary"
+            className="text-red-500 group-hover/delete:text-white transition-colors"
           />
-        </div>
+        </button>
       )}
     </div>
   );
