@@ -22,8 +22,8 @@ const Navbar = () => {
   };
   console.log(theme);
   return (
-    <div>
-      <div className="navbar bg-base-100 shadow-sm">
+    <>
+      <div className="navbar shadow-sm backdrop-blur-xl bg-white/30 z-50 fixed">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -47,13 +47,28 @@ const Navbar = () => {
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
             >
               <li>
-                <NavLink to="/home">Home</NavLink>
+                <NavLink
+                  to="/"
+                  className={({ isActive }) => isActive && "text-green-500"}
+                >
+                  Home
+                </NavLink>
               </li>
               <li>
-                <NavLink to="/blogs">Blogs</NavLink>
+                <NavLink
+                  to="/blogs"
+                  className={({ isActive }) => isActive && "text-green-500"}
+                >
+                  Blogs
+                </NavLink>
               </li>
               <li>
-                <NavLink to="/bookmarks">Bookmarks</NavLink>
+                <NavLink
+                  to="/bookmarks"
+                  className={({ isActive }) => isActive && "text-green-500"}
+                >
+                  Bookmarks
+                </NavLink>
               </li>
             </ul>
           </div>
@@ -64,13 +79,28 @@ const Navbar = () => {
         <div className="navbar-end hidden lg:flex">
           <ul className="menu menu-horizontal px-1 text-lg font-medium">
             <li>
-              <NavLink to="/home">Home</NavLink>
+              <NavLink
+                to="/"
+                className={({ isActive }) => isActive && "text-green-500"}
+              >
+                Home
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/blogs">Blogs</NavLink>
+              <NavLink
+                to="/blogs"
+                className={({ isActive }) => isActive && "text-green-500"}
+              >
+                Blogs
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/bookmarks">Bookmarks</NavLink>
+              <NavLink
+                to="/bookmarks"
+                className={({ isActive }) => isActive && "text-green-500"}
+              >
+                Bookmarks
+              </NavLink>
             </li>
           </ul>
           <label className="toggle text-base-content">
@@ -122,7 +152,7 @@ const Navbar = () => {
           </label>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

@@ -1,9 +1,12 @@
+/* import tailwind css */
 @import "tailwindcss";
 
 /* Enable daisyUI core plugin */
-@plugin "daisyui";
+@plugin "daisyui"{
+  themes : all;
+};
 
 /* Import daisyUI’s theme system and choose built-in themes */
-@plugin "daisyui/theme" {
-  themes: light, dark, cupcake;
-}
+/* @plugin "daisyui/theme" {
+  themes: light, dark;
+} */
