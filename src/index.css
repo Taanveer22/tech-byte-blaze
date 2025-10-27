@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+/* Enable daisyUI core plugin */
+@plugin "daisyui";
+
+/* Import daisyUI’s theme system and choose built-in themes */
+@plugin "daisyui/theme" {
+  themes: light, dark, cupcake;
+}
