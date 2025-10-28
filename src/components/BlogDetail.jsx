@@ -2,11 +2,12 @@ import { useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { Outlet } from "react-router-dom";
-import { FaBookmark } from "react-icons/fa";
+import { MdBookmarkAdd } from "react-icons/md";
+import { setToLocalStorage } from "../utilities";
 
 const BlogDetail = () => {
   const blogDetailData = useLoaderData();
-  console.log(blogDetailData);
+  // console.log(blogDetailData);
   const [tabIndex, setTabIndex] = useState(0);
   const {
     title,
@@ -15,6 +16,11 @@ const BlogDetail = () => {
     public_reactions_count,
     published_at,
   } = blogDetailData;
+
+  const handleAddToBookmark = (blogDetailData) => {
+    // console.log(blogDetailData);
+    setToLocalStorage(blogDetailData);
+  };
   return (
     <>
       <div className="max-w-5xl px-6 py-12 my-12 mx-auto space-y-12 bg-sky-200">
@@ -31,7 +37,7 @@ const BlogDetail = () => {
           </div>
         </article>
         {/* ==========tab========== */}
-        <div className="flex items-center justify-center overflow-x-auto overflow-y-hidden text-lg font-semibold text-gray-800">
+        <div className="flex gap-6 items-center justify-center overflow-x-auto overflow-y-hidden text-lg font-semibold text-gray-800">
           <Link
             to="content"
             onClick={() => setTabIndex(0)}
@@ -75,7 +81,12 @@ const BlogDetail = () => {
             </svg>
             <span>Author</span>
           </Link>
-          <FaBookmark size={30} className="text-red-500"></FaBookmark>
+          <div
+            onClick={() => handleAddToBookmark(blogDetailData)}
+            className="text-red-500 bg-gray-600 p-3 rounded-full"
+          >
+            <MdBookmarkAdd size={50}></MdBookmarkAdd>
+          </div>
         </div>
         {/* ====dynamic content===== */}
         <Outlet></Outlet>
