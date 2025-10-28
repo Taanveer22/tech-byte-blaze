@@ -1,9 +1,12 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigation } from "react-router-dom";
 import BlogCard from "../components/BlogCard";
+import Spinner from "../components/Spinner";
 
 const Blogs = () => {
   const blogsData = useLoaderData();
   // console.log(blogsData);
+  const navigation = useNavigation();
+  if (navigation.state === "loading") return <Spinner></Spinner>;
   return (
     <div>
       <section className="bg-gray-800 dark:bg-gray-100 text-gray-100 dark:text-gray-800">
