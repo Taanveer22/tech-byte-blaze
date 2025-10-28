@@ -20,10 +20,10 @@ const Navbar = () => {
       setTheme("light");
     }
   };
-  console.log(theme);
+  // console.log(theme);
   return (
     <>
-      <div className="navbar shadow-sm backdrop-blur-xl bg-white/30 z-50 fixed">
+      <div className="navbar shadow-sm backdrop-blur-xl bg-gray-400/30 z-50 fixed">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -49,7 +49,9 @@ const Navbar = () => {
               <li>
                 <NavLink
                   to="/"
-                  className={({ isActive }) => isActive && "text-green-500"}
+                  className={({ isActive }) =>
+                    isActive ? "text-green-500" : "text-gray-800"
+                  }
                 >
                   Home
                 </NavLink>
@@ -57,7 +59,9 @@ const Navbar = () => {
               <li>
                 <NavLink
                   to="/blogs"
-                  className={({ isActive }) => isActive && "text-green-500"}
+                  className={({ isActive }) =>
+                    isActive ? "text-green-500" : "text-gray-800"
+                  }
                 >
                   Blogs
                 </NavLink>
@@ -65,7 +69,9 @@ const Navbar = () => {
               <li>
                 <NavLink
                   to="/bookmarks"
-                  className={({ isActive }) => isActive && "text-green-500"}
+                  className={({ isActive }) =>
+                    isActive ? "text-green-500" : "text-gray-800"
+                  }
                 >
                   Bookmarks
                 </NavLink>
@@ -81,7 +87,9 @@ const Navbar = () => {
             <li>
               <NavLink
                 to="/"
-                className={({ isActive }) => isActive && "text-green-500"}
+                className={({ isActive }) =>
+                  isActive ? "text-green-500" : "text-gray-800"
+                }
               >
                 Home
               </NavLink>
@@ -89,7 +97,9 @@ const Navbar = () => {
             <li>
               <NavLink
                 to="/blogs"
-                className={({ isActive }) => isActive && "text-green-500"}
+                className={({ isActive }) =>
+                  isActive ? "text-green-500" : "text-gray-800"
+                }
               >
                 Blogs
               </NavLink>
@@ -97,7 +107,9 @@ const Navbar = () => {
             <li>
               <NavLink
                 to="/bookmarks"
-                className={({ isActive }) => isActive && "text-green-500"}
+                className={({ isActive }) =>
+                  isActive ? "text-green-500" : "text-gray-800"
+                }
               >
                 Bookmarks
               </NavLink>
