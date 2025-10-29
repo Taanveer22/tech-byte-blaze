@@ -23,12 +23,12 @@ const BlogDetail = () => {
   };
   return (
     <>
-      <div className="max-w-5xl px-6 py-12 my-12 mx-auto space-y-12 bg-sky-200">
+      <div className="max-w-3xl w-full my-12 mx-auto space-y-12 bg-base-300">
         {/* ==========article============== */}
-        <article className=" text-gray-900 p-6">
+        <article className=" text-gray-500 p-6">
           <div className="space-y-6">
             <h1 className="text-3xl font-bold md:text-4xl">{title}</h1>
-            <div className="flex flex-col justify-center items-start text-base text-gray-600">
+            <div className="flex flex-col justify-center items-start text-base text-gray-400">
               <p>*** {new Date(published_at).toLocaleDateString()}</p>
               <p>*** {reading_time_minutes} min read</p>
               <p>*** {comments_count} comments</p>
@@ -37,7 +37,7 @@ const BlogDetail = () => {
           </div>
         </article>
         {/* ==========tab========== */}
-        <div className="flex gap-6 items-center justify-center overflow-x-auto overflow-y-hidden text-lg font-semibold text-gray-800">
+        <div className="flex gap-6 items-center justify-center overflow-x-auto overflow-y-hidden text-lg font-semibold text-gray-400">
           <Link
             to="content"
             onClick={() => setTabIndex(0)}

@@ -11,7 +11,7 @@ const BlogCard = ({ blog, deletable, handleDeleteBookmark }) => {
         <Link to={`/blogdetail/${id}`}>
           <img
             role="presentation"
-            className="object-cover w-full rounded h-44 bg-gray-500 "
+            className="object-cover w-full rounded h-44"
             src={cover_image || placeHolderImage}
           />
           <div className="p-6 space-y-2">

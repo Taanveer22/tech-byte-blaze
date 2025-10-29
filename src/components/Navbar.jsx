@@ -23,7 +23,7 @@ const Navbar = () => {
   // console.log(theme);
   return (
     <>
-      <div className="navbar shadow-sm backdrop-blur-xl bg-gray-400/30 z-50 fixed">
+      <div className="navbar shadow-sm backdrop-blur-xl bg-gray-300/30 z-50 fixed">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -50,7 +50,7 @@ const Navbar = () => {
                 <NavLink
                   to="/"
                   className={({ isActive }) =>
-                    isActive ? "text-green-500" : "text-gray-800"
+                    isActive ? "text-green-500" : "text-gray-400"
                   }
                 >
                   Home
@@ -60,7 +60,7 @@ const Navbar = () => {
                 <NavLink
                   to="/blogs"
                   className={({ isActive }) =>
-                    isActive ? "text-green-500" : "text-gray-800"
+                    isActive ? "text-green-500" : "text-gray-400"
                   }
                 >
                   Blogs
@@ -70,7 +70,7 @@ const Navbar = () => {
                 <NavLink
                   to="/bookmarks"
                   className={({ isActive }) =>
-                    isActive ? "text-green-500" : "text-gray-800"
+                    isActive ? "text-green-500" : "text-gray-400"
                   }
                 >
                   Bookmarks
@@ -88,7 +88,7 @@ const Navbar = () => {
               <NavLink
                 to="/"
                 className={({ isActive }) =>
-                  isActive ? "text-green-500" : "text-gray-800"
+                  isActive ? "text-green-500" : "text-gray-400"
                 }
               >
                 Home
@@ -98,7 +98,7 @@ const Navbar = () => {
               <NavLink
                 to="/blogs"
                 className={({ isActive }) =>
-                  isActive ? "text-green-500" : "text-gray-800"
+                  isActive ? "text-green-500" : "text-gray-400"
                 }
               >
                 Blogs
@@ -108,7 +108,7 @@ const Navbar = () => {
               <NavLink
                 to="/bookmarks"
                 className={({ isActive }) =>
-                  isActive ? "text-green-500" : "text-gray-800"
+                  isActive ? "text-green-500" : "text-gray-400"
                 }
               >
                 Bookmarks
